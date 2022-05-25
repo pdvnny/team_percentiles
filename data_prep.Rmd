@@ -1,0 +1,94 @@
+---
+title: "data_prep"
+author: "dvnny"
+date: "May 19, 2022"
+output: html_document
+---
+## GOAL/OUTLINE
+
+My goal for this "project" is to collect data on all teams for all available years, then use this data to determine the percentile where teams fall among all NFL teams historically.
+
+It's a little bit of a big task, so I'm going to try to set some smaller goals first.
+
+- Load data for each team (i.e., I need all the team names and abbreviations)
+
+- Load win/loss data for each team
+
+- Load points for (PF), points against (PA), and point differential (PD)
+
+- 
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(ggplot2)
+library(tidyverse)
+library(nflfastR)
+library(dplyr)
+
+```
+
+## Information about nflfastR
+
+Introduction to R and RStudio by Lee Sharpe: <https://github.com/nflverse/nfldata/blob/master/RSTUDIO-INTRO.md#r-and-rstudio-introduction>
+Beginner's Guide to nflfastR by Ben Baldwin: <https://www.nflfastr.com/articles/beginners_guide.html>
+
+Information about nflfastR models (e.g., expected points & CPOE): <https://www.opensourcefootball.com/posts/2020-09-28-nflfastr-ep-wp-and-cp-models/>
+
+
+## Loading the Data from nflfastR
+
+First, what data do I need?
+To get started...
+(1) Basic weekly stats -> PF, PA, PD, percentage of drives scored on
+(2) Complex weekly stats -> 
+
+
+Second, how am I going to get all of this data?
+
+I am going to break this up into other scripts, then copy the work I need into here.
+(1) PF, PA, PD                          -> 
+(2) Percentage of drives scored on      ->
+(3) 
+
+
+Comments about the contents loaded
+(1) games -> NOT loaded from nflfastR, but seems to contain all NFL games from 1999 to present
+  Includes:
+  - Week
+  - away_team, home_team
+  - away_score, home_score
+  - result (away_score - home_score)
+  - spread_line, total_line
+(2) 
+
+```{r Loading Data, message=FALSE}
+
+# Data about all games I think
+games <- read_csv("http://www.habitatring.com/games.csv")
+# Below is an example of some things that can be selected from this table
+# games %>% select(season,week,location,away_team,away_score,home_team,home_score,result) %>% head()
+
+
+
+```
+
+
+## R Markdown - Instructions and information about how to use R Markdown below
+
+
+
+
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+# plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
